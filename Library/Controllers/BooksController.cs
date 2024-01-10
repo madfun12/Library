@@ -45,6 +45,7 @@ namespace Library.Controllers
         }
 
         // GET: Books/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -56,7 +57,7 @@ namespace Library.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Author,Description,IsRead")] Book book)
+        public async Task<IActionResult> Create([Bind("Id,Title,Author,Description,ImageLink,IsRead")] Book book)
         {
             if (ModelState.IsValid)
             {
@@ -68,6 +69,7 @@ namespace Library.Controllers
         }
 
         // GET: Books/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -89,7 +91,7 @@ namespace Library.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Author,Description,IsRead")] Book book)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Author,Description,ImageLink,IsRead")] Book book)
         {
             if (id != book.Id)
             {
@@ -120,6 +122,7 @@ namespace Library.Controllers
         }
 
         // GET: Books/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
