@@ -5,12 +5,12 @@
     ViewData["Title"] = "Log in";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1 class="text-light">@ViewData["Title"]</h1>
 <div class="row">
     <div class="col">
         <section>
             <form id="account" method="post">
-                <h2>Enter your credentials to log in and make changes</h2>
+                <h2 class="text-light">Enter your credentials to log in and make changes</h2>
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                 <div class="form-floating mb-3">
@@ -24,7 +24,7 @@
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
                 <div class="checkbox mb-3">
-                    <label asp-for="Input.RememberMe" class="form-label">
+                    <label asp-for="Input.RememberMe" class="form-label text-light">
                         <input class="form-check-input" asp-for="Input.RememberMe" />
                         @Html.DisplayNameFor(m => m.Input.RememberMe)
                     </label>

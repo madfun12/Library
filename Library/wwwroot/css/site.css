@@ -19,4 +19,16 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #131313;
+}
+
+input[type="checkbox"][aria-disabled="true"]{
+    pointer-events: none;
+    accent-color: #258cfb;
+}
+
+input.form-control,
+input.form-control:focus{
+    background-color: #131313;
+    color: #fff;
 }
